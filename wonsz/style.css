@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+    background-image: url(snake.png);
+    color: #065006da;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+    background-size: auto 100%;
+}
+
+#main{
+    display: inline-block;
+    width: 900px;
+    height: 570px;
+    margin-top: 3%;
+    float: left;
+    background-color: black;
+}
+
+#count{
+    float: left;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 17%;
+    margin-top: 10%;
+    height: 35%;
+    font-size: 30px;
+}
+
+.pole{
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid #065006da;
+    float:left;
+}
+
+#start{
+    border: 2px solid #75ff75f3;
+    color: #75ff75f3;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+    margin-left: 3%;
+    cursor: pointer;
+}
+
+.zak{
+    border: 0px solid #000000;
+    color: #000000;
+    cursor: default;
+}
+
+#start:hover{
+    border: 2px solid #065006da;
+    color: #065006da;
+}
