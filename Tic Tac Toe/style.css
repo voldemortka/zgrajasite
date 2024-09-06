@@ -1,0 +1,36 @@
+body{
+    background-color: #000000;
+    color: #16485f;
+}
+
+h1{
+    font-size: 50px;
+    color: #16485f;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-top: 0px;
+}
+
+#table{
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    //border: 3px solid #16485f;
+    color: red;
+    font-size: 50px;
+}
+
+.kafelek{
+    display: inline-block;
+    margin: 1px;
+    border: 2px solid #ffffffb0;
+    width: 150px;
+    height: 150px;
+    background-image: url("nic.png");
+}
+
+.kafelek:hover{
+    border: 2px solid #16485f;
+}
