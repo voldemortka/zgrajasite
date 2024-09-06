@@ -1,0 +1,113 @@
+body{
+    background-color: black;
+    background-image: url(christmas.png);
+    color: white;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-attachment: fixed;
+    background-size: auto 100%;
+    cursor: default;
+}
+
+#main{
+    display: inline-block;
+    width: 900px;
+    height: 570px;
+    margin-top: 0%;
+    float: left;
+    background-color: #2d90ec60;
+}
+
+#count{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 10%;
+    height: 35%;
+    font-size: 25px;
+    text-align: center;
+    font-family: "Josefin Slab", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.pole{
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid white;
+    float:left;
+}
+
+#start{
+    border: 2px solid #2d90ec;
+    color: #2d90ec;
+    font-size: 20px;
+    width: 150px;
+    text-align: center;
+    margin-left: 2%;
+    cursor: pointer;
+    float:left;
+}
+
+.zak{
+    border: 0px solid #000000;
+    color: #000000;
+    cursor: default;
+}
+
+#start:hover{
+    border: 2px solid #2d90ec;
+    color: #2d90ec;
+}
+
+h3{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    margin-bottom: 30%;
+    margin-top: 15%;
+    font-family: "Mountains of Christmas", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#side{
+    float: left;
+    width: 19%;
+}
+
+#info{
+    width: 15px;
+    float:left;
+    margin-left: 1%;
+    cursor:pointer;
+    margin-top: 0.5%;
+}
+
+a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+a:link{
+    text-decoration: none;
+    color: white;
+}
+
+#infos{
+    margin-left: 30%;
+    font-size: 20px;
+}
+
+p{
+    font-size: 30px;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1{
+    font-size: 40px;
+    margin-left: 20%;
+    margin-bottom: 40px;
+}
