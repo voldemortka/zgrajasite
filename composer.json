@@ -1,0 +1,15 @@
+{
+    "name": "ola/zgrajasite_main",
+    "description": "Talalalalala",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ola"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "firebase/php-jwt": "*"
+    }
+}
