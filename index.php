@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +17,7 @@
         </form>
 
         <?php
-            session_start();
+            
             if(isset($_SESSION['error_entered_code'])) {echo "<div id='error_index'>".$_SESSION['error_entered_code']."</div>"; unset($_SESSION['error_entered_code']);}
         ?>
 
