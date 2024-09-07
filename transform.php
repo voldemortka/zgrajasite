@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("connect.php");
-    $connection = mysqli_connect($host, $db_user, $db_password, $db_name);
+    $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
 
     if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']){
         $name = $_SESSION['username'];
@@ -12,7 +12,7 @@
 
     if(isset($_POST['name'])){
         $sql1 = "insert into konto(id,name,const) values (id, '".$_POST['name']."', 0)";
-        mysqli_query($connection, $sql1);
+        pg_query($connection, $sql1);
         $name = $_POST['name'];
         $_SESSION['name'] = $name;
         $log=true;
