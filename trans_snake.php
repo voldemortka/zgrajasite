@@ -18,7 +18,7 @@
     $sql3 = "select id from ruch where gra=3 and action=4";
     $res2 = pg_query($connection, $sql2);
     $res3 = pg_query($connection, $sql3);
-    if($res3 -> pg_num_rows >0 || $res2 -> pg_num_rows>9) header('Location: transform.php');
+    if(pg_num_rows($res3) >0 || pg_num_rows($res2)>9) header('Location: transform.php');
     
     //tu już na 100% wchodzimy do gry
     $sql5 = "select kolor.id as id from kolor left join aktualne on kolor.id=aktualne.kolor where aktualne.kolor is NULL limit 1";
@@ -26,10 +26,10 @@
     $row = pg_fetch_row($res);
     $col = $row[0];    
 
-    $nr = $res2 -> pg_num_rows;
+    $nr = pg_num_rows($res2);
     $sql6 = "select id from aktualne where gra=3 and kto=".$id;
     $res6 = pg_query($connection, $sql6);
-    if($res6 -> pg_num_rows ==0){
+    if(pg_num_rows($res6) ==0){
         $sql4 = "insert into aktualne(id, gra, kto, alive, in_game, pkt, linie, kolor) values (NULL, 3, ".$id.", 1, 0, 0, 0, ".$col.")";
         pg_query($connection, $sql4);
     }
@@ -37,7 +37,7 @@
     $sql11 = "select kolor.id as id, kolor.hex as hex, konto.name as name from konto inner join (kolor inner join aktualne on kolor.id=aktualne.kolor) on konto.id=aktualne.kto";
     $res = pg_query($connection, $sql11);
     $kolory = [];
-    while($row = $res -> pg_fetch_assoc()){
+    while($row = pg_fetch_assoc($res)){
         $kolory[] = array(
             'hex' => $row['hex'],
             'name' => $row['name']
@@ -47,7 +47,7 @@
     $sql7 = "select id, name, hex from kolor order by id";
     $res = pg_query($connection, $sql7);
     $barwy = [];
-    while($row = $res -> pg_fetch_assoc()){
+    while($row = pg_fetch_assoc($res)){
         $barwy[] = array(
             'id' => $row['id'],
             'hex' => $row['hex'],
@@ -66,7 +66,7 @@
     $spis = [];
     $sql8 = "select konto.name as name from konto inner join aktualne on konto.id=aktualne.kto where aktualne.gra=3 order by aktualne.id";
     $res = pg_query($connection, $sql8);
-    while($row = $res -> pg_fetch_assoc()){
+    while($row = pg_fetch_assoc($res)){
         $spis[] = $row['name'];
     }
     //print_r($spis);
