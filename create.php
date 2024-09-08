@@ -6,7 +6,7 @@
     if(!isset($_SESSION['who'])) header('Location: index.php');
     if($_SESSION['who']!='zgraja') header('Location: zgraja.php');
 
-    if(isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['robot']) && isset($_POST['organ']) && isset($_POST['name']) && isset($_POST['zdj']))
+    if(isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['robot']) && isset($_POST['organ']) && isset($_POST['name']) && isset($_FILES['zdj']))
     {
         require_once("connect.php");
        $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
