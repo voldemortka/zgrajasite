@@ -6,18 +6,18 @@
     if(isset($_POST['pass']) && isset($_POST['name']))
     {
         require_once("connect.php");
-        $connection = mysqli_connect($host, $db_user, $db_password, $db_name);
+        $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
 
         $pass = $_POST['pass']; unset($_POST['pass']);
         $un = $_POST['name']; unset($_POST['name']);
-        echo $un."</br>";
+        //echo $un."</br>";
         
         $sql_check = "select pass, id from konto where name='".$un."';"; //wypierz hasło z takim nickiem
-        $res_baza = mysqli_query($connection, $sql_check);
-        $row_baza = mysqli_fetch_row($res_baza);
+        $res_baza = pg_query($connection, $sql_check);
+        $row_baza = pg_fetch_row($res_baza);
 
         $OK=true;
-        if($res_baza->num_rows == 1) $pass_baza = $row_baza[0]; else $OK=false;
+        if(pg_num_rows($res_baza) == 1) $pass_baza = $row_baza[0]; else $OK=false;
         if($OK && password_verify($pass, $pass_baza)){
             $_SESSION['zalogowany']=true;
             $_SESSION['username'] = $un;
