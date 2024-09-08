@@ -1,6 +1,6 @@
 <?php
     require_once("connect.php");
-    $connection = mysqli_connect($host, $db_user, $db_password, $db_name);
+    $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
 
     session_start();
     if(!isset($_SESSION['who'])) header('Location: index.php');
@@ -11,7 +11,7 @@
 
     if(isset($_POST['new_name']) && $_POST['new_name']!=""){
         $sql_name = "update konto set name='".$_POST['new_name']."' where name='".$name."';";
-        $res_name = mysqli_query($connection, $sql_name);
+        $res_name = pg_query($connection, $sql_name);
         $name=$_POST['new_name'];
         $_SESSION['username']=$_POST['new_name'];
     }
@@ -19,25 +19,25 @@
     if(isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['old_pass']) && $_POST['pass1']!=""){
         if($_POST['pass1'] != $_POST['pass2']) $error_edit="hasła nie są takie same";
         $sql_check = "select pass from konto where name='".$name."';";
-        $res_baza = mysqli_query($connection, $sql_check);
-        $row_baza = mysqli_fetch_row($res_baza);
-        if($res_baza->num_rows == 1) {
+        $res_baza = pg_query($connection, $sql_check);
+        $row_baza = pg_fetch_row($res_baza);
+        if(pg_num_rows($res_baza) == 1) {
             $pass_baza = $row_baza[0];
             if(!password_verify($pass_baza, $_POST['old_pass'])) $error_eidt="złe hasło stare";
             $hash = password_hash($_POST['pass1'],PASSWORD_DEFAULT);
             $sql_has = "update konto set pass='".$hash."' where name='".$name."';";
-            if($error_edit=="none") $res_has = mysqli_query($connection, $sql_has);
+            if($error_edit=="none") $res_has = pg_query($connection, $sql_has);
         }
         else $error_edit = "problem ze starym hasłem";
     }
 
     $sql1 = "select img from konto where name='".$name."'";
-    $res1 = mysqli_query($connection, $sql1);
-    $row1 = mysqli_fetch_row($res1);
+    $res1 = pg_query($connection, $sql1);
+    $row1 = pg_fetch_row($res1);
     $img_path = $row1[0];
 
     $sql = "select statystyki.pkt as pkt, statystyki.zwyciestwa as zw, statystyki.rozgrywki as roz, gry.name as gra from konto inner join (gry inner join statystyki on gry.id=statystyki.gra) on konto.id=statystyki.kto where konto.name='".$name."' order by gry.name";
-    $res = mysqli_query($connection, $sql);
+    $res = pg_query($connection, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +70,7 @@
         <div id='stats'>
             <b>Gra</b>: suma pkt --- zwycięstwa --- odbyte rogrywki</br></br>
             <?php
-            while($row = $res -> fetch_assoc())
+            while($row = pg_fetch_assoc($res))
             {
                 echo "<b>".$row['gra']."</b>: ".$row['pkt']."pkt --- ".$row['zw']." --- ".$row['roz']."</br>";
             }
