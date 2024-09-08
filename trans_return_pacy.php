@@ -3,20 +3,20 @@
     $name = $_SESSION['username'];
     $id = $_SESSION['id'];
     require_once("connect.php");
-    $connection = mysqli_connect($host, $db_user, $db_password, $db_name);
+    $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
 
     $sql1 = "select konto.name as name, aktualne.pkt as pkt from konto inner join aktualne on konto.id=aktualne.kto where aktualne.gra=7 order by pkt desc limit 1";
-    $res = mysqli_query($connection, $sql1);
-    $row = mysqli_fetch_row($res);
+    $res = pg_query($connection, $sql1);
+    $row = pg_fetch_row($res);
     $max_name = $row[0];
     $max_pkt = $row[1];
 
     $sql3 = "select id from ruch where gra=7 and action=12";
-    $res = mysqli_query($connection, $sql3);
-    if($res -> num_rows ==0){
+    $res = pg_query($connection, $sql3);
+    if(pg_num_rows($res) ==0){
         $sql2 = "select konto.name as name from konto inner join ruch on konto.id=ruch.kto where ruch.action=6 and ruch.gra=7 order by ruch.id desc limit 1";
-        $res = mysqli_query($connection, $sql2);
-        $row = mysqli_fetch_row($res);
+        $res = pg_query($connection, $sql2);
+        $row = pg_fetch_row($res);
         $last_snake = $row[0];    
     } else $last_snake="Gra przerwana";
 
