@@ -1,6 +1,6 @@
 <?php
-print_r($_POST);
-print_r($_FILES);
+//print_r($_POST);
+//print_r($_FILES);
 
     session_start();
     if(!isset($_SESSION['who'])) header('Location: index.php');
@@ -9,7 +9,7 @@ print_r($_FILES);
     if(isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['robot']) && isset($_POST['organ']) && isset($_POST['name']) && isset($_POST['zdj']))
     {
         require_once("connect.php");
-        $connection = mysqli_connect($host, $db_user, $db_password, $db_name);
+       $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
     
         $name = $_POST['name']; unset($_POST['name']);
         $pass1 = $_POST['pass1']; unset($_POST['pass1']);
@@ -33,7 +33,7 @@ print_r($_FILES);
         if($OK)
         {
             $sql = "insert into konto(id, name, pass, img, const) VALUES (NULL, '".$name."', '".$hash."','".$path_prof."',1)";
-            $res = mysqli_query($connection, $sql);
+            $res = pg_query($connection, $sql);
             $done=true;
         }
     }
