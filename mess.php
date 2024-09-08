@@ -4,15 +4,15 @@
     if(!isset($_SESSION['zalogowany']) || !$_SESSION['zalogowany']) header('Location: zgraja.php');
         
     require_once("connect.php");
-    $connection = mysqli_connect($host, $db_user, $db_password, $db_name);
+    $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
 
     $name=$_SESSION['username'];
     
     if(isset($_SESSION['id'])) $id = $_SESSION['id'];
     else{
         $sql1 = "select id from konto where name='".$name."'";
-        $res = mysqli_query($connection, $sql1);
-        $row = mysqli_fetch_row($res);
+        $res = pg_query($connection, $sql1);
+        $row = pg_fetch_row($res);
         $id = $row[0];
         $_SESSION['id']=$id;
     }
@@ -40,19 +40,7 @@
             <div class='pan_top'><a href='logout.php' class='gora_a'>Log out</a></div>
         </div>
 
-        <div id='lista_mess'>
-            <h5>Lista osób, z którymi możesz rozmawiać:</h5>
-            
-            <?php
-            $sql1 = "select name, id from konto where const=1 order by name";
-                $res = mysqli_query($connection, $sql1);
-                while($row = $res -> fetch_assoc()){
-                    if($row['id']!=$id)
-                        echo "<div class='mess_list' onclick='show_mess(".$row['id'].", \"".$row['name']."\")'>".$row['name']."</div>";
-                }
-            ?>
-
-        </div>
+                <div class='komunikat'>W tym miejscu kiedyś pojawi się taki czat do pisania ze sobą. Jest w przygotowaniu, pierwszy w kolejności do dokończenia ze wszystkich tych rzeczy, których nie skończyłam na tej stronie ig</div>
 
         <script src="jquery-3.7.1.min.js"></script>
         <script src="zgraja.js"></script>
