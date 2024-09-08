@@ -37,8 +37,8 @@
     }
 
     $dane1 = [
-        //'iss' => 'http://zgrajasite.kesug.com',
-        'iss' => "http://localhost/mine/zgraja%20site",
+        'iss' => 'https://zgrajasite.onrender.com',
+        //'iss' => "http://localhost/mine/zgraja%20site",
         'iat' => time(),
         'exp' => time() + 3600, // Token ważny przez 1 godzinę
         'data' => [
@@ -49,8 +49,8 @@
         ]
     ];
     $dane2 = [
-        //'iss' => 'http://zgrajasite.kesug.com',
-        'iss' => "http://localhost/mine/zgraja%20site",
+        'iss' => 'https://zgrajasite.onrender.com',
+        //'iss' => "http://localhost/mine/zgraja%20site",
         'iat' => time(),
         'exp' => time() + 3600, // Token ważny przez 1 godzinę
         'data' => [
