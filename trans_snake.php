@@ -74,6 +74,7 @@
     $dane1 = [
         'iss' => 'https://zgrajasite.onrender.com/',
         //'iss' => "http://localhost/mine/zgraja%20site",
+        date_default_timezone_set('UTC'); 
         'iat' => time(),
         'exp' => time() + 3600, // Token ważny przez 1 godzinę
         'data' => [
