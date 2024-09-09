@@ -6,7 +6,7 @@
     if(!isset($_SESSION['who'])) header('Location: index.php');
     if($_SESSION['who']!='zgraja') header('Location: zgraja.php');
 
-    if(isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['robot']) && isset($_POST['organ']) && isset($_POST['name']) && isset($_FILES['zdj']))
+    if(isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['robot']) && isset($_POST['organ']) && isset($_POST['name']))
     {
         require_once("connect.php");
        $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
@@ -20,7 +20,7 @@
         if($pass1!=$pass2) $OK=false;
         
         $hash = password_hash($pass1,PASSWORD_DEFAULT);
-
+/*
         if(!getimagesize($_FILES['zdj']['tmp_name'])) $OK=false;
         else{
             //$name_prof = uniquid('',true).".".pathinfo($_FILES['zdj']['name'],PATHINFO_EXTENSION);
@@ -29,10 +29,11 @@
 
             if(!move_uploaded_file($_FILES['zdj']['tmp_name'],$path_prof)) $OK=false;
         }
+*/
         
         if($OK)
         {
-            $sql = "insert into konto(id, name, pass, img, const) VALUES (NULL, '".$name."', '".$hash."','".$path_prof."',1)";
+            $sql = "insert into konto(id, name, pass, img, const) VALUES (NULL, '".$name."', '".$hash."','',1)";
             $res = pg_query($connection, $sql);
             $done=true;
         }
@@ -63,7 +64,7 @@
                         <div class='dopisek'>Ta nazwa będzie wyświetlana innym użytkownikom podczas grania w gry sieciowe, a także posłuży przy logowaniu</div>
                         <div class='pan_log'><label>Hasło<input type='password' placeholder='wprowadź hasło' name='pass1'></label></div>
                         <div class='pan_log'><label>Powtórz hasło<input type='password' placeholder='jeszcze raz hasło' name='pass2'></label></div>
-                        <div class='pan_log'>Zdjęcie profilowe <input type='file' name='zdj' id='zdj'></div>
+                        
                         <div class='pan_log'><label><input type='radio' name='robot'>Nie jestem robotem XDD</label></div>
                         <div class='pan_log'><label><input type='radio' name='organ'>Wyrażam zgodę na sprzedanie moich organów</label></div>
                         <div class='pan_log'><input type='submit' value='send'></div>
