@@ -30,7 +30,7 @@
     $sql6 = "select id from aktualne where gra=3 and kto=".$id;
     $res6 = pg_query($connection, $sql6);
     if(pg_num_rows($res6) ==0){
-        $sql4 = "insert into aktualne(id, gra, kto, alive, in_game, pkt, linie, kolor) values (NULL, 3, ".$id.", 1, 0, 0, 0, ".$col.")";
+        $sql4 = "insert into aktualne(gra, kto, alive, in_game, pkt, linie, kolor) values (3, ".$id.", 1, 0, 0, 0, ".$col.")";
         pg_query($connection, $sql4);
     }
 
