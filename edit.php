@@ -31,10 +31,10 @@
         else $error_edit = "problem ze starym hasłem";
     }
 
-    $sql1 = "select img from konto where name='".$name."'";
+    /*$sql1 = "select img from konto where name='".$name."'";
     $res1 = pg_query($connection, $sql1);
     $row1 = pg_fetch_row($res1);
-    $img_path = $row1[0];
+    $img_path = $row1[0]; */
 
     $sql = "select statystyki.pkt as pkt, statystyki.zwyciestwa as zw, statystyki.rozgrywki as roz, gry.name as gra from konto inner join (gry inner join statystyki on gry.id=statystyki.gra) on konto.id=statystyki.kto where konto.name='".$name."' order by gry.name";
     $res = pg_query($connection, $sql);
@@ -64,7 +64,7 @@
 
     <div id='left'>
         <div id='prof'>
-            <div id='prof_img'><img id='img_on_prof' src='<?= $img_path ?>'></div>
+            <div id='prof_img'>Profile picture is not aviliable for now. I'll do it when I find time</div>
             <div id='prof_name'><?=$name?></div>
         </div>
         <div id='stats'>
