@@ -33,7 +33,7 @@
         
         if($OK)
         {
-            $sql = "insert into konto(id, name, pass, img, const) VALUES (NULL, '".$name."', '".$hash."','',1)";
+            $sql = "insert into konto( name, pass, img, const) VALUES ('".$name."', '".$hash."','',1)";
             $res = pg_query($connection, $sql);
             $done=true;
         }
