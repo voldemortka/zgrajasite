@@ -25,7 +25,7 @@
     $sql6 = "select id from aktualne where gra=7 and kto=".$id;
     $res6 = pg_query($connection, $sql6);
     if(pg_num_rows($res6) ==0){
-        $sql4 = "insert into aktualne(id, gra, kto, alive, in_game, pkt, linie) values (NULL, 7, ".$id.", 1, 0, 0, 0)";
+        $sql4 = "insert into aktualne(gra, kto, alive, in_game, pkt, linie) values (7, ".$id.", 1, 0, 0, 0)";
         pg_query($connection, $sql4);
     }
 
