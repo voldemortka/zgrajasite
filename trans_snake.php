@@ -107,8 +107,12 @@
     
     <script>
     // Zapisanie tokenu w localStorage
-    localStorage.setItem('snake1_token', '<?= $jwt1 ?>');
-    localStorage.setItem('snake2_token', '<?= $jwt2 ?>');
+    document.cookie = "snake1_token=" + $jwt1 + "; SameSite=None; Secure; path=/";
+    document.cookie = "snake2_token=" + $jwt2 + "; SameSite=None; Secure; path=/";
+
+
+    /*localStorage.setItem('snake1_token', '<? $jwt1 ?>');
+    localStorage.setItem('snake2_token', '<? $jwt2 ?>');*/
     
     // Przekierowanie do strony z grą
     window.location.href = 'https://zgrajasitenode.onrender.com/wonsz3/';
