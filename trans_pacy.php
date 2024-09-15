@@ -65,8 +65,12 @@
     
     <script>
     // Zapisanie tokenu w localStorage
-    localStorage.setItem('pacy1_token', '<?= $jwt1 ?>');
-    localStorage.setItem('pacy2_token', '<?= $jwt2 ?>');
+    // localStorage.setItem('pacy1_token', '<? $jwt1 ?>');
+   // localStorage.setItem('pacy2_token', '<? $jwt2 ?>'); 
+
+    document.cookie = "pacy1_token=" + $jwt1 + "; SameSite=None; Secure; path=/";
+    document.cookie = "pacy2_token=" + $jwt2 + "; SameSite=None; Secure; path=/";
+
     
     // Przekierowanie do strony z grą
     window.location.href = 'https://zgrajasitenode.onrender.com/pacman2/';
