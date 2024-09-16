@@ -11,7 +11,7 @@
 
 
     if(isset($_POST['name'])){
-        $sql1 = "insert into konto(id,name,const) values ('".$_POST['name']."', 0)";
+        $sql1 = "insert into konto(name,const) values ('".$_POST['name']."', 0)";
         pg_query($connection, $sql1);
         $name = $_POST['name'];
         $_SESSION['name'] = $name;
