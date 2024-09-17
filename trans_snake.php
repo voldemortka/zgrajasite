@@ -72,7 +72,7 @@
     //print_r($spis);
 
     $dane1 = [
-        'iss' => 'https://zgrajasite.onrender.com/',
+        //'iss' => 'https://zgrajasite.onrender.com/',
         //'iss' => "http://localhost/mine/zgraja%20site",
         'iat' => time(),
         'exp' => time() + 3600, // Token ważny przez 1 godzinę
@@ -88,7 +88,7 @@
     ];
     //print_r($dane1);
     $dane2 = [
-        'iss' => 'https://zgrajasite.onrender.com/',
+        //'iss' => 'https://zgrajasite.onrender.com/',
         //'iss' => "http://localhost/mine/zgraja%20site",
         'iat' => time(),
         'exp' => time() + 3600, // Token ważny przez 1 godzinę
