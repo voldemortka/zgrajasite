@@ -107,8 +107,9 @@
     
     <script>
     // Zapisanie tokenu w localStorage
-    document.cookie = "snake1_token= '<?=$jwt1?>'; SameSite=None; Secure; path=/";
-    document.cookie = "snake2_token= '<?=$jwt2?>'; SameSite=None; Secure; path=/";
+    document.cookie = "snake1_token=<?=$jwt1?>; SameSite=None; Secure; path=/; domain=.onrender.com";
+    document.cookie = "snake2_token=<?=$jwt2?>; SameSite=None; Secure; path=/; domain=.onrender.com";
+
 
 
     /*localStorage.setItem('snake1_token', '<? $jwt1 ?>');
