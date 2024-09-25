@@ -5,7 +5,7 @@
     $kat = $_POST['kategoria'];
 
     //$pass = preg_replace("/[a-zA-Z]/", "<div class='empty'></div>", $password);
-    $pass = preg_replace("/[a-zA-Z]/", "?", $password);
+    $pass = preg_replace("/[\p{L}]/u", "?", $password);
     $pass = str_replace(" ", "     ", $pass);
     $password = str_replace(" ", "     ", $password);
 
