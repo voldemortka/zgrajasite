@@ -10,11 +10,13 @@
         <title>Verification</title>
     </head>
     <body>
-        <h1>Enter code - if u're one of us, u must know it code is: "zenszen" ya moron</h1>
+        <h1>Enter code - if u're one of us, u must know it</h1>
         <form method='post' action='check.php'>
             <div id='entercode'><input id='code_start' type='password' name='entercode' placeholder='Type the code here and hit ENTER'></div>
             <input type='submit' value='check'>
         </form>
+
+        <a href='xyz/index.php'>Dla Mamy Karoliny</a>
 
         <?php
             
