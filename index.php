@@ -16,7 +16,7 @@
             <input type='submit' value='check'>
         </form>
 
-        <a href='xyz/index.php'>Dla Mamy Karoliny</a>
+        <a href='xyz/index.html'>Dla Mamy Karoliny</a>
 
         <?php
             
