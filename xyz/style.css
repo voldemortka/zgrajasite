@@ -1,0 +1,167 @@
+body{
+    background-color: #096c47;
+    color: #faeac8;
+    letter-spacing: 2px;
+    cursor: default;
+}
+
+form{
+    background-color: #faeac8;
+    color: #096c47;
+    border: 1px dashed #096c47;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 3vh;
+    width: 55%;
+    padding: 20px;
+    margin-top: 30vh;
+}
+
+#inp1{margin-bottom: 15px;}
+
+#inp2{margin-bottom: 30px;}
+
+
+#go_back{
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 2%;
+    margin-top: 5px;
+    border: 1px dotted #faeac8;
+}
+#go_back:hover{
+    transform: scale(0.97);
+}
+
+#kat{
+    text-align: center;
+    font-size: 15px;
+    color: gray;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+    margin-top: 1%;
+}
+
+#kategoria{
+    width:fit-content;
+    padding: 5px;
+    max-width: 70%;
+    border: 1px solid #faeac8;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 22px;
+}
+
+.empty{
+   border: 1px solid #faeac8;
+   width: 20px;
+   height: 35px;
+   display: inline-block;
+   margin: 2px;
+}
+
+#pass_box{
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1%;
+    padding: 5%;
+    text-align: center;
+    align-items: center;
+    white-space: pre;
+    letter-spacing: 20px;
+    font-size: 4vh;
+}
+
+
+/* Old version */
+#pojemnik
+{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*#plansza
+{
+    width: 900px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 48px;
+    min-height: 60px;
+}
+
+#szubienica
+{
+    float: left;
+    width:450px;
+    text-align: center;
+    min-height: 300px;
+} */
+
+#alfabet
+{
+    width:450px;
+    text-align: center;
+    min-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.litera
+{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border: 3px outset #faeac8;
+    background-color: #faeac8;
+    color: #096c47;
+    float: left;
+    cursor: default;
+    border-radius: 15px;
+}
+
+.litera:hover
+{
+    border: 3px outset #faeac8;
+    background-color: #faeac8;
+    color: #096c47;
+    transform: scale(0.92);
+}
+
+#back{
+    border: 1px dashed white;
+    width: 180px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+#back:hover{
+    border: 1px dashed #ffffff8c;
+    cursor: pointer;
+}
+
+a:visited{
+    text-decoration: none;
+    color: white;
+}
+a:link{
+    text-decoration: none;
+    color: white;
+}
+
+form{
+    text-align: center;
+    margin-top: 200px;
+}
