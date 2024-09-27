@@ -68,7 +68,7 @@ form{
 }
 
 #pass_box{
-    width: 85%;
+    max-width: 85%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 1%;
