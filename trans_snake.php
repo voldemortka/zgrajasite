@@ -86,6 +86,15 @@
             'spis' => $spis
         ]
     ];
+$data1 = [
+    'name' => $name,
+            'id' => $id,
+            'hex' => $hex,
+            'nr' => $nr,
+            'kolory' => $kolory,
+            'barwy' => $barwy,
+            'spis' => $spis
+];
     //print_r($dane1);
     $dane2 = [
         //'iss' => 'https://zgrajasite.onrender.com/',
@@ -99,16 +108,26 @@
             'nr' => $nr
         ]
     ];
+
+$data2 = [
+    'name' => $name,
+            'id' => $id,
+            'hex' => $hex,
+            'nr' => $nr
+];
+
+setcookie('snake1', json_encode($data1), time() + 3600, '/', '.onrender.com', true, true);
+setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', true, true);
     
     
-    $jwt1 = JWT::encode($dane1, "zgrajasite_snake1", "HS256");
-    $jwt2 = JWT::encode($dane2, "zgrajasite_snake2", "HS256");
+   // $jwt1 = JWT::encode($dane1, "zgrajasite_snake1", "HS256");
+   // $jwt2 = JWT::encode($dane2, "zgrajasite_snake2", "HS256");
     ?>
     
     <script>
     // Zapisanie tokenu w localStorage
-    document.cookie = "snake1_token=<?=$jwt1?>; SameSite=None; Secure; path=/; domain=.onrender.com";
-    document.cookie = "snake2_token=<?=$jwt2?>; SameSite=None; Secure; path=/; domain=.onrender.com";
+   // document.cookie = "snake1_token=<?=$jwt1?>; SameSite=None; Secure; path=/; domain=.onrender.com";
+    //document.cookie = "snake2_token=<?=$jwt2?>; SameSite=None; Secure; path=/; domain=.onrender.com";
 
 
 
