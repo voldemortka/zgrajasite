@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo "Pls wait, We're moving u into the game...";
+//echo "Pls wait, We're moving u into the game...";
     require 'vendor/autoload.php';
     use \Firebase\JWT\JWT;
 
@@ -73,7 +73,7 @@ echo "Pls wait, We're moving u into the game...";
     }
     //print_r($spis);
 
-echo "data's collecting started...";
+//echo "data's collecting started...";
 
     $dane1 = [
         //'iss' => 'https://zgrajasite.onrender.com/',
@@ -120,12 +120,12 @@ $data2 = [
             'nr' => $nr
 ];
 
-echo "data's moving...";
+//echo "data's moving...";
 
 setcookie('snake1', json_encode($data1), time() + 3600, '/', '.onrender.com', true, true);
 setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', true, true);
 
-echo "Okay, done. Prepare to be moved to the game";
+//echo "Okay, done. Prepare to be moved to the game";
     
     
    // $jwt1 = JWT::encode($dane1, "zgrajasite_snake1", "HS256");
