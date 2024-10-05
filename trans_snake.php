@@ -125,6 +125,10 @@ $data2 = [
 setcookie('snake1', json_encode($data1), time() + 3600, '/', '.onrender.com', true, true);
 setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', true, true);
 
+print_r($data1);
+
+header('Location: https://zgrajasitenode.onrender.com/wonsz3/');
+
 //echo "Okay, done. Prepare to be moved to the game";
     
     
@@ -133,7 +137,7 @@ setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', tr
     ?>
     
     <script>
-        window.location.href = 'https://zgrajasitenode.onrender.com/wonsz3/';
+        //window.location.href = 'https://zgrajasitenode.onrender.com/wonsz3/';
     // Zapisanie tokenu w localStorage
    // document.cookie = "snake1_token=<?=$jwt1?>; SameSite=None; Secure; path=/; domain=.onrender.com";
     //document.cookie = "snake2_token=<?=$jwt2?>; SameSite=None; Secure; path=/; domain=.onrender.com";
