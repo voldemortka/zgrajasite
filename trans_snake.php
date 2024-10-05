@@ -125,7 +125,6 @@ $data2 = [
 setcookie('snake1', json_encode($data1), time() + 3600, '/', '.onrender.com', true, true);
 setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', true, true);
 
-print_r($data1);
 
 header('Location: https://zgrajasitenode.onrender.com/wonsz3/');
 
