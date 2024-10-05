@@ -1,9 +1,10 @@
 <?php
+session_start();
 echo "Pls wait, We're moving u into the game...";
     require 'vendor/autoload.php';
     use \Firebase\JWT\JWT;
 
-    session_start();
+    
     require_once("connect.php");
     $connection = pg_connect("host=$host dbname=$db_name user=$db_user password=$db_password port=$port");
 
