@@ -1,4 +1,5 @@
 <?php
+echo "Pls wait, We're moving u into the game...";
     require 'vendor/autoload.php';
     use \Firebase\JWT\JWT;
 
@@ -71,6 +72,8 @@
     }
     //print_r($spis);
 
+echo "data's collecting started...";
+
     $dane1 = [
         //'iss' => 'https://zgrajasite.onrender.com/',
         //'iss' => "http://localhost/mine/zgraja%20site",
@@ -116,8 +119,12 @@ $data2 = [
             'nr' => $nr
 ];
 
+echo "data's moving...";
+
 setcookie('snake1', json_encode($data1), time() + 3600, '/', '.onrender.com', true, true);
 setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', true, true);
+
+echo "Okay, done. Prepare to be moved to the game";
     
     
    // $jwt1 = JWT::encode($dane1, "zgrajasite_snake1", "HS256");
@@ -125,6 +132,7 @@ setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', tr
     ?>
     
     <script>
+        window.location.href = 'https://zgrajasitenode.onrender.com/wonsz3/';
     // Zapisanie tokenu w localStorage
    // document.cookie = "snake1_token=<?=$jwt1?>; SameSite=None; Secure; path=/; domain=.onrender.com";
     //document.cookie = "snake2_token=<?=$jwt2?>; SameSite=None; Secure; path=/; domain=.onrender.com";
@@ -135,5 +143,5 @@ setcookie('snake2', json_encode($data2), time() + 3600, '/', '.onrender.com', tr
     localStorage.setItem('snake2_token', '<? $jwt2 ?>');*/
     
     // Przekierowanie do strony z grą
-    window.location.href = 'https://zgrajasitenode.onrender.com/wonsz3/';
+    
     </script>
