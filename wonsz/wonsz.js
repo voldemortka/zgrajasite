@@ -9,7 +9,7 @@ var bugs=0;
 var first=true;
 
 function FINISH_GAME() {
-    alert("weszło");
+    //alert("weszło");
     const DaneZGry = { pkt: bugs };
     fetch('stats.php', {
         method: 'POST',
@@ -22,7 +22,7 @@ function FINISH_GAME() {
         return JSON.parse(data); // Spróbuj sparsować odpowiedź jako JSON
     })    .catch(error => {
         console.error('Error:', error);
-        alert('Wystąpił błąd podczas wysyłania danych.');
+        //alert('Wystąpił błąd podczas wysyłania danych.');
     });
 }
 
