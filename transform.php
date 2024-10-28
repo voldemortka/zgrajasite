@@ -39,6 +39,8 @@
             <div class='pan_top' style='border-bottom: 1px solid white;'><a href='transform.php' class='gora_a' id='przekierowanie_str2' onmouseenter='info_przekier()' onmouseleave='info_out()'>Gry multiplayer</a></div>
         </div>
 
+        <div id='komunikat'>NA RAZIE NIE DZIAŁA! Prawie, prawie, jak znajdę ze 2 wieczory wolnego czasu, to to dokończę</div>
+
         <h5>Your name:</h5>
         <div id='name_tans'>
             <?= $log ? $name : "
