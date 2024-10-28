@@ -48,9 +48,8 @@
             <div class='choosing_game_out'><a href='Wisielec/index.php'><div class='choosing_game'>Wisielec</div></a></div>
             <div class='choosing_game_out'><a href='Tic Tac Toe/index.html'><div class='choosing_game'>Kółko i krzyżyk</div></a></div>
             <p>Będą jak skończę:</br>They don't exist</p>
-            <div class='choosing_game_out'><a href=''><div class='choosing_game'>Tetris (ostatnia gra na tej stronie ig. Reszta na tej u góry)</div></a></div>
-            <div class='choosing_game_out'><a href='Wonsz 3.0/zasady.php'><div class='choosing_game'>Wonsz 3.0 v multi-komputer</div></a></div>
-            <div class='choosing_game_out'><a href=''><div class='choosing_game'>Pacman 3.0 v 3D</div></a></div>
+            <div class='choosing_game_out'><a href=''><div class='choosing_game'>Tetris (została ostatnia prosta do ukończenia)</div></a></div>
+            <div class='choosing_game_out'><a href=''><div class='choosing_game'>Pacman 3.0 -> grafika 3D, itd</div></a></div>
         </div>
 
         <script src="jquery-3.7.1.min.js"></script>
