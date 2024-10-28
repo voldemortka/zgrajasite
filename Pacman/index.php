@@ -16,8 +16,10 @@
         </div>
         <div id="plansza">
             <?php
-                for($i=0;$i<322;$i++)
+                for($i=0;$i<322;$i++){
                     echo "<div class='pole' id='p".$i."'><img src='point.png'></div>";
+                    if($i%23==22) echo "<br>";
+                }
             ?>
         </div>
         <div style="clear:both;"></div>
