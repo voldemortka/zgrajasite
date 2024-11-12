@@ -2,7 +2,10 @@ var haslo = "";
 var haslo1="";
 var ile_skuch=1;
 var dlugosc;
+var nr=1;
 //window.onload = start;
+
+var passes=[], kats=[];
 
 var litery=new Array(35);
 
@@ -50,13 +53,21 @@ function wypisz_haslo()
 }
 
 
-function start(password, pass)
+function start(data)
 {
-    haslo = password;
-    haslo1 = pass;
+
+    passes = data.passes;
+    kats = data.kats;
+
+    haslo = passes[0];
     haslo=haslo.toUpperCase();
-    
+
+    haslo1 = haslo.replace(/[\p{L}]/gu, "?");
+    haslo1 = haslo1.replace(/ /g, "     ");
+    haslo = haslo.replace(/ /g, "     ");
+
     dlugosc = haslo.length;
+    $('#pass_box').html(haslo1);
 
    /* for(i=0;i<dlugosc;i++){
         if(haslo.charAt(i)==" ") haslo1+=" ";
@@ -83,12 +94,43 @@ String.prototype.ustawZnak=function(miejsce,znak)
     else return this.substr(0,miejsce)+znak+this.substr(miejsce+1);
 }
 
+function next(){
+    
+    if(nr==10) window.location.href="index.html";
+    nr++;
+    $('#nr').html(nr);
+    haslo = passes[nr-1];
+    let kat = kats[nr-1];
+    $('#kategoria').html(kat);
+    haslo=haslo.toUpperCase();
+
+    haslo1 = haslo.replace(/[\p{L}]/gu, "?");
+    haslo1 = haslo1.replace(/ /g, "     ");
+    haslo = haslo.replace(/ /g, "     ");
+
+    dlugosc = haslo.length;
+
+    $('#pass_box').html(haslo1);
+
+    $('#alfabet').html("");
+
+    for(i=0;i<35;i++)
+        {
+            var element="lit"+i; 
+    
+            $('#alfabet').append('<div class="litera" onclick="sprawdz('+i+')" id="'+element+'" > '+litery[i]+' </div>');
+            if((i+1)%7==0) $('#alfabet').append('<div style="clear:both;"></div> ');
+        }
+}
+
 function sprawdz(nr)
 {
+    console.log(litery[nr]);
     console.log(nr);
     var trafiona=false;
     console.log(haslo);
     console.log(haslo1);
+    console.log(dlugosc);
     for(i=0;i<dlugosc;i++)
     {
         if(haslo.charAt(i)==litery[nr])
@@ -115,6 +157,8 @@ function sprawdz(nr)
         document.getElementById(element).style.border="3px solid #C00000";
         document.getElementById(element).style.cursor="default";
     }
+
+    if(haslo==haslo1) next();
 }
 
 
