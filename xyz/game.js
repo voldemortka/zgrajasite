@@ -94,8 +94,13 @@ String.prototype.ustawZnak=function(miejsce,znak)
     else return this.substr(0,miejsce)+znak+this.substr(miejsce+1);
 }
 
-function next(){
-    
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function next(){
+    $('#pass_box').html(haslo);
+    await sleep(1000);
     if(nr==10) window.location.href="index.html";
     nr++;
     $('#nr').html(nr);
