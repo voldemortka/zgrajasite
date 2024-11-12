@@ -98,6 +98,10 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function poka(){
+    $('#pass_box').html(haslo);
+}
+
 async function next(){
     $('#pass_box').html(haslo);
     await sleep(1000);
