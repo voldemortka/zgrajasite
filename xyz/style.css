@@ -75,7 +75,7 @@ form{
     padding: 5%;
     text-align: center;
     align-items: center;
-    white-space: pre;
+    white-space: pre-wrap;
     letter-spacing: 20px;
     font-size: 4vh;
 }
