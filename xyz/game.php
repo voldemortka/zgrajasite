@@ -30,7 +30,8 @@
     </head>
     <body onload='start(<?php echo json_encode(["passes" => $passes, "kats" => $kats]); ?>)'>
         <div id='go_back'><a href='index.html'>Ustaw nowe hasło</a></div>
-        <div id='go_back' onclick='next()'>POKAŻ HASŁO</div>
+        <div id='go_back' onclick='next()'>Przejdź do kolejnego hasła</div>
+        <div id='go_back' onclick='poka()'>Pokaż hasło</div>
         <div id='nr'>1</div>
         <div id='kat'>Kategoria</div>
         <div id="kategoria"><?=$kat?></div>
