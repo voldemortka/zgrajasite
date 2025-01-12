@@ -17,8 +17,7 @@
         </form>
 
         <a href='xyz/index.html'>Link do gry dla Mamy Karoliny</a>
-        <br><br>
-        <a href='osracy.mov'>TU MASZ TEN FILMIK</a>
+
 
         <?php
             
