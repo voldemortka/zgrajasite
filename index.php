@@ -17,6 +17,7 @@
         </form>
 
         <a href='xyz/index.html'>Link do gry dla Mamy Karoliny</a>
+        <a href='trip/index.html'>Wyprawa do Krakowa</a>
 
 
         <?php
