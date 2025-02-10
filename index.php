@@ -16,7 +16,7 @@
             <input type='submit' value='check'>
         </form>
 
-        <a href='xyz/index.html'>Link do gry dla Mamy Karoliny</a>
+        <a href='xyz/index.html'>Link do gry dla Mamy Karoliny</a><br>
         <a href='trip/index.html'>Wyprawa do Krakowa</a>
 
 
