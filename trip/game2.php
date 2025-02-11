@@ -7,6 +7,7 @@
  while ($row = pg_fetch_row($res)) {
      $tab[] = $row[0];
  }
+
     while(count($tab)!=0){
         $i = random_int(0, count($tab)-1);
         $pytanie = $tab[$i];
